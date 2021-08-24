@@ -1,0 +1,61 @@
+-- this entity is vulnerable when reloading --
+-- while amount of bullets is not predictable, reloading time is --
+hp = 2
+
+bulletsToShoot=0
+turnsToReload=0
+
+
+alreadyInited = false
+
+function update()
+    if not(alreadyInited) then
+        alreadyInited = true
+        realDistance = distanceLeft
+        return aimLeft
+    end
+
+    if bulletsToShoot > 0 then
+        bulletsToShoot = bulletsToShoot - 1
+        return shoot
+    end
+
+    if turnsToReload > 0 then
+        turnsToReload = turnsToReload - 1
+        return aimDown
+    end
+
+    if distanceLeft ~= realDistance then
+        bulletsToShoot=math.random(5) --[1,5]--
+        turnsToReload=3
+    end
+    return aimLeft
+
+end
+
+
+-- You can use following returns:
+skip = 0
+goRight = 1
+goLeft = 2
+jump = 3
+aimLeft = 4
+aimRight = 5
+aimUp = 6
+shoot = 7
+shootLeft = 8
+shootRight = 9
+shootUp = 10
+shootDown = 11
+aimDown = 12
+fall = 13
+fallUp = 14
+fallRight = 15
+fallDown = 16
+fallLeft = 17
+
+-- You can also use following variables (they will dynamically change):
+distanceDown = 0
+distanceUp = 0
+distanceRight = 0
+distanceLeft = 0

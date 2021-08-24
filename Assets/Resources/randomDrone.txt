@@ -1,0 +1,76 @@
+--You will need to hit this creature 3 times to destroy it--
+--Maybe you should avoid it's attacks instead--
+hp = 3
+
+choosingDirection = true
+
+function update()
+    if choosingDirection then
+        randomValue = math.random(4) --[1,4]--
+        choosingDirection = false
+        if randomValue == 1 then
+
+            if distanceRight == 0 then
+                choosingDirection = true
+                return update()
+            end
+
+            return aimRight
+        elseif randomValue == 2 then
+
+            if distanceDown == 0 then
+                choosingDirection = true
+                return update()
+            end
+
+            return aimDown
+        elseif randomValue == 3 then
+
+            if distanceLeft == 0 then
+                choosingDirection = true
+                return update()
+            end
+
+            return aimLeft
+        else
+
+            if distanceUp == 0 then
+                choosingDirection = true
+                return update()
+            end
+
+            return aimUp
+        end
+    else
+        choosingDirection = true
+        return fall
+    end
+
+end
+
+
+-- You can use following returns:
+skip = 0
+goRight = 1
+goLeft = 2
+jump = 3
+aimLeft = 4
+aimRight = 5
+aimUp = 6
+shoot = 7
+shootLeft = 8
+shootRight = 9
+shootUp = 10
+shootDown = 11
+aimDown = 12
+fall = 13
+fallUp = 14
+fallRight = 15
+fallDown = 16
+fallLeft = 17
+
+-- You can also use following variables (they will dynamically change):
+distanceDown = 0
+distanceUp = 0
+distanceRight = 0
+distanceLeft = 0

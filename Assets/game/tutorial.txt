@@ -1,0 +1,21 @@
+                --Your workspace--
+    You will build a program for your first rover in this folder. 
+    The file name is rover.lua. You will need to make Lua scripts, the default code is already there. You may use any IDE you like, or just use notepad.
+    If you need to see the default code again, just delete the file and reload the menu with code.
+    After you upload your code in-game, the code will duplicate in the level folder, so you can revisit your old code and copy some things if you need to.
+    
+                --Menu with code and level choosing--
+    Click on the update button (refresh icon) to upload your code to the game.
+    You can select level with arrows on the top right.
+    You can also preview the level with an eye icon.
+    To start the level, click the arrow in the bottom right.
+
+                --Actual level--
+    Use arrows (or A/D) to move the camera.
+    Press ESC to return to the code menu.
+    Click the arrow on the bottom right to start the next turn.
+    The function called depends on the state of the button, you can control it by clicking it (updates once per turn). 
+    The arrow beside the button indicates your intentions (click or not to click)
+    Position of the hand indicates the current state of the button (clicked or not clicked)
+
+That's about it. Good luck! 

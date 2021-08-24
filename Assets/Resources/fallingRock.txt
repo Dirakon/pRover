@@ -1,0 +1,50 @@
+--You can easily destroy this rock, but maybe sometimes it can be useful while alive?--
+hp = 1
+
+alreadyInited = false
+preparingToFall = false
+
+function update()
+    if not(alreadyInited) then
+        alreadyInited = true
+        realDistance = distanceDown
+        return skip
+    end
+
+    if preparingToFall then
+        return fallDown
+    end
+
+    if distanceDown ~= realDistance then
+        preparingToFall = true
+    end
+    return skip
+
+end
+
+
+-- You can use following returns:
+skip = 0
+goRight = 1
+goLeft = 2
+jump = 3
+aimLeft = 4
+aimRight = 5
+aimUp = 6
+shoot = 7
+shootLeft = 8
+shootRight = 9
+shootUp = 10
+shootDown = 11
+aimDown = 12
+fall = 13
+fallUp = 14
+fallRight = 15
+fallDown = 16
+fallLeft = 17
+
+-- You can also use following variables (they will dynamically change):
+distanceDown = 0
+distanceUp = 0
+distanceRight = 0
+distanceLeft = 0
